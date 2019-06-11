@@ -1,21 +1,25 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image} from 'react-native';
 import Config from 'react-native-config'
+
+const {
+  APP_NAME,
+  COLOR,
+  IS_IMAGE_ENABLE
+} = Config;
 
 type Props = {};
 export default class App extends Component<Props> {
+
+  renderImage = () => (
+    <Image source={{uri: "https://avatars.mds.yandex.net/get-pdb/1340225/bdfa5962-ae66-493c-b41d-ee57e9e0e450/s375"}} style={styles.imageStyle} />
+  )
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native! {Config.APP_NAME}</Text>
+        <Text style={styles.welcome}>Welcome to React Native! {APP_NAME}</Text>
+        {IS_IMAGE_ENABLE && this.renderImage()}
       </View>
     );
   }
@@ -26,16 +30,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Config.COLOR,
+    backgroundColor: COLOR,
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  imageStyle: {
+    height: 100,
+    width: 100,
+    resizeMode: 'contain'
+  }
 });

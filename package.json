@@ -8,6 +8,8 @@
     "start:ios:prod": "ENVFILE=.env react-native run-ios",
     "start:android":"cd android && ENVFILE=.env.staging ./gradlew assembleRelease",
     "start:android:prod": "cd android && ENVFILE=.env ./gradlew assembleRelease",
+    "PopInUserAppDev": "node node_modules/react-native/local-cli/cli.js run-ios --scheme=PopInUserAppDev",
+    "PopInUserAppProd": "node node_modules/react-native/local-cli/cli.js run-ios --scheme=PopInUserAppProd",
     "test": "jest"
   },
   "dependencies": {
