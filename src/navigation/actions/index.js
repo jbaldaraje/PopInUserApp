@@ -3,7 +3,7 @@ import * as screenNames from "../screen_names";
 
 export const navigateBack = () => NavigationActions.back();
 
-export const navigateToWelcome = () =>
+export const navigateToTab = () =>
   NavigationActions.navigate({
-    routeName: screenNames.WELCOME
+    routeName: screenNames.TAB_NAV
   });
